@@ -1,0 +1,28 @@
+<%- include('../partials/head', { title: 'Registrace' }) %>
+
+<h2>Registrace</h2>
+<form action="/auth/register" method="post">
+  <% if (errors && errors.length) { %>
+    <ul style="color:red;">
+      <% errors.forEach(e => { %><li><%= e.msg %></li><% }) %>
+    </ul>
+  <% } %>
+
+  <div><label>Uživatelské jméno</label>
+    <input name="username" value="<%= old.username || '' %>" required /></div>
+
+  <div><label>Heslo</label>
+    <input type="password" name="password" required /></div>
+
+  <div><label>Potvrzení hesla</label>
+    <input type="password" name="confirm" required /></div>
+
+  <div>
+    <label><input type="checkbox" name="aiConsent" <%= old.aiConsent ? 'checked' : '' %> />
+      Souhlasím, že mnou vložená data mohou být využita pro trénink AI</label>
+  </div>
+
+  <button type="submit">Registrovat</button>
+</form>
+
+<%- include('../partials/foot') %>

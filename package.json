@@ -1,0 +1,17 @@
+{
+  "name": "2matura_cvicnajs",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": { "start": "node server.js", "dev": "nodemon server.js" },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-sqlite3": "^0.9.15",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": { "nodemon": "^3.1.7" }
+}

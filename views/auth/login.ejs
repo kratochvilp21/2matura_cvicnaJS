@@ -1,0 +1,19 @@
+<%- include('../partials/head', { title: 'Přihlášení' }) %>
+
+<h2>Přihlášení</h2>
+<form action="/auth/login" method="post">
+  <% if (errors && errors.length) { %>
+    <ul style="color:red;">
+      <% errors.forEach(e => { %><li><%= e.msg %></li><% }) %>
+    </ul>
+  <% } %>
+
+  <div><label>Uživatelské jméno</label>
+    <input name="username" value="<%= old.username || '' %>" required /></div>
+  <div><label>Heslo</label>
+    <input type="password" name="password" required /></div>
+
+  <button type="submit">Přihlásit</button>
+</form>
+
+<%- include('../partials/foot') %>

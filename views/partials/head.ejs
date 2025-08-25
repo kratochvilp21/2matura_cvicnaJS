@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <title><%= title || 'Aplikace' %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<header style="padding:10px 0;border-bottom:1px solid #ddd;">
+  <nav style="max-width:900px;margin:0 auto;">
+    <a href="/">Domů</a>
+    <% if (user) { %>
+      <span> | Přihlášen: <strong><%= user.username %></strong></span>
+      <form action="/auth/logout" method="post" style="display:inline;margin-left:10px;">
+        <button type="submit">Odhlásit</button>
+      </form>
+    <% } else { %>
+      <a href="/auth/login">Přihlásit</a> | <a href="/auth/register">Registrovat</a>
+    <% } %>
+  </nav>
+</header>
+<main style="max-width:900px;margin:16px auto;">
